@@ -61,4 +61,4 @@ with DAG(
         script_location='s3://ecommerce-data-raw-dataengineer/scripts/load_data_ecommerce.py',
         create_job_kwargs={"GlueVersion":"3.0","NumberOfWorkers":2,"WorkerType":"G.1X"}
     )
-    create_tables 
+create_tables >> extract_data >> transform_data >> load_data
